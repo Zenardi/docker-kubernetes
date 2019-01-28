@@ -1,0 +1,16 @@
+version: '3'
+services: 
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: always
+    # args:
+    #   proxy: "http://127.0.0.1:3128"
+    #   sproxy: "http://127.0.0.1:3128"
+    #   noproxy: "localhost,127.0.0.1"
+    # args:
+    #     http_proxy: http://127.0.0.1:3128
+    #     https_proxy: http://127.0.0.1:3128
+    build: .
+    ports:
+      - "4001:8081"
